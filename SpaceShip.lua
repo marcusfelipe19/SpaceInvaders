@@ -1,10 +1,10 @@
-SpaceShip = class{}
+SpaceShip = Class{}
 
 function SpaceShip:init(x, y, width, height)
     self.x = x
     self.y = y
     self.width = width
-    seçf.height = height
+    self.height = height
     self.dx = 0
 end
 
@@ -17,5 +17,5 @@ function SpaceShip:update(dt)
 end
 
 function SpaceShip:render()
-    love.graphics.rectangle('fill', self.x, self.y, self.widthm self.height)
+    love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end

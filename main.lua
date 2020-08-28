@@ -2,6 +2,10 @@ push = require 'push'
 
 Class = require 'class'
 
+require 'SpaceShip'
+
+--requerer bola e objetos.
+
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
 
@@ -28,6 +32,8 @@ function love.load()
         canvas = false
     })
 
+
+    player = SpaceShip(VIRTUAL_WIDTH / 2 - 20, VIRTUAL_HEIGHT - 20, 40, 10)
     --Colocar Jogador, bola e inimigos aqui.
 
     score = 0
@@ -77,6 +83,7 @@ function love.draw()
 
     displayScore()
 
+    player:render()
     --Render player and objects.
 
     displayFPS()
