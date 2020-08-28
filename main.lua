@@ -4,6 +4,8 @@ Class = require 'class'
 
 require 'SpaceShip'
 
+require 'Enemy'
+
 --requerer bola e objetos.
 
 WINDOW_WIDTH = 1280
