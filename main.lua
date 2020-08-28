@@ -68,17 +68,30 @@ function love.draw()
         love.graphics.setFont(smallFont)
         love.graphics.printf('Welcome to Space Invaders!', 0, 10, VIRTUAL_WIDTH, 'center')
         love.graphics.printf('Press Enter to begin!', 0, 20, VIRTUAL_WIDTH, 'center')
+    elseif gameState == 'play' then
+
+    elseif gameState == 'done' then
+        love.graphics.setFont(smallFont)
+        love.graphics.printf('Press Enter to restart!', 0, 30, VIRTUAL_WIDTH, 'center')
     end
+
+    displayScore()
+
+    --Render player and objects.
+
+    displayFPS()
+
+    push:finish()
 end
 
 function displayScore()
     love.graphics.setFont(scoreFont)
-    love.graphics.print(tostring(score), 10, 15)
+    love.graphics.print('Score: ' .. tostring(score), 10, 10)
 end
 
 function displayFPS()
     love.graphics.setFont(smallFont)
     love.graphics.setColor(0, 255, 0, 255)
-    love.graphics.print('FPS: '.. tostring(love.timer.getFPS()), VIRTUAL_WIDTH - 20, 10)
+    love.graphics.print('FPS: '.. tostring(love.timer.getFPS()), VIRTUAL_WIDTH - 40, 10)
     love.graphics.setColor(255, 255, 255, 255)
 end
